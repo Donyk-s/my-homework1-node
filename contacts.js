@@ -7,7 +7,7 @@
 
 // TODO: задокументувати кожну функцію
 function listContacts() {
-    const contacts = require("./db")
+    // const contacts = require("./db")
     // ...твій код. Повертає масив контактів.
     // console.log(contacts)
   }
