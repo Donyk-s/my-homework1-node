@@ -1,17 +1,21 @@
 // contacts.js
+const fs = require('fs/promises');
+const path = require("path");
 
-/*
- * Розкоментуй і запиши значення
- * const contactsPath = ;
- */
-
+//  Розкоментуй і запиши значення
+const contactsPath = path.join(__dirname, "db", "contacts.json");
+// console.log(contactsPath);
 // TODO: задокументувати кожну функцію
-function listContacts() {
-    // const contacts = require("./db")
-    // ...твій код. Повертає масив контактів.
-    // console.log(contacts)
-  }
-
+// async function listContacts() {
+//     const contactsTxt = await fs.readFile(contactsPath, 'utf8');
+//     console.log(contactsTxt)
+//   }
+async function listContacts() {
+  const contacts = await fs.readFile(contactsPath);
+  return JSON.parse(contacts);
+  console.log(JSON.parse(contacts))
+}
+listContacts();
   
   function getContactById(contactId) {
     // ...твій код. Повертає об'єкт контакту з таким id. Повертає null, якщо контакт з таким id не знайдений.
